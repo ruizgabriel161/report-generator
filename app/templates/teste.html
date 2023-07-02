@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atualizar CSS</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function atualizarCSS() {
+                $.ajax({
+                    url: '/atualizar-css',
+                    type: 'POST',
+                    success: function(data) {
+                        var css = data.css;
+
+                        var style = $('<style>').text(css);
+
+                        $('head style').remove();
+                        $('head').append(style);
+                    }
+                });
+            }
+
+            setInterval(atualizarCSS, 5000);
+        });
+    </script>
+</head>
+<body>
+    <h1>Exemplo de Atualização de CSS</h1>
+    <p>Este é um exemplo de atualização de CSS em tempo real.</p>
+</body>
+</html>
