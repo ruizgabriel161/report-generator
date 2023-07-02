@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Atualizar CSS</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Flask Progress Bar</title>
+    <style>
+        progress {
+            width: 300px;
+        }
+    </style>
     <script>
-        $(document).ready(function() {
-            function atualizarCSS() {
-                $.ajax({
-                    url: '/atualizar-css',
-                    type: 'POST',
-                    success: function(data) {
-                        var css = data.css;
+        function atualizarProgressBar() {
+            var progressBar = document.getElementById('progressBar');
+            var eventSource = new EventSource('/progresso');
 
-                        var style = $('<style>').text(css);
+            eventSource.onmessage = function(event) {
+                var progresso = parseInt(event.data);
+                progressBar.value = progresso;
 
-                        $('head style').remove();
-                        $('head').append(style);
-                    }
-                });
-            }
+                if (progresso >= 100) {
+                    eventSource.close();
+                }
+            };
+        }
 
-            setInterval(atualizarCSS, 5000);
-        });
+        atualizarProgressBar();
     </script>
 </head>
 <body>
-    <h1>Exemplo de Atualização de CSS</h1>
-    <p>Este é um exemplo de atualização de CSS em tempo real.</p>
+    <h1>Flask Progress Bar Example</h1>
+    <progress id="progressBar" value="0" max="100"></progress>
 </body>
 </html>

@@ -1,5 +1,5 @@
 from time import sleep
-
+from config import API_KEY
 import pandas as pd
 import requests
 
@@ -88,7 +88,7 @@ class StartMaps(InfoMaps):
     URL_LAT_LONG = r"https://maps.googleapis.com/maps/api/geocode/json"
     URL_DETAILS = r"https://maps.googleapis.com/maps/api/place/details/json"
     URL_SEARCH = r"https://maps.googleapis.com/maps/api/place/textsearch/json"
-    API_KEY = "AIzaSyCoKJaTPByvT6VqRGZsFHRPoloZvgZzo7Q"
+    API_KEY = API_KEY
 
     def __init__(self, search: str):
         super().__init__(StartMaps.API_KEY, search)

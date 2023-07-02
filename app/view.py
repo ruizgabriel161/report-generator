@@ -34,18 +34,3 @@ def index():
                 render_template("index.html", status="Erro ao gerar o relatório.")
 
     return render_template("index.html")
-
-
-@app.route("/teste")
-def teste():
-    return render_template("teste.html")
-
-
-@app.route("/atualizar-css", methods=["POST"])
-def atualizar_css():
-    cores = ["red", "blue", "green", "yellow", "orange", "purple"]
-    cor = random.choice(cores)
-
-    css = "body { background-color: %s; }" % cor
-
-    return jsonify({"css": css})
