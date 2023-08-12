@@ -1,0 +1,18 @@
+[default]
+SQLALCHEMY_DATABASE_URI = "sqlite:///vision_scrapping.db"
+dotenv_file = ".secrets.toml"
+TITLE = "Vision Admin"
+SECRET_KEY = "G@briel210399"
+SESSION_TYPE = "filesystem"
+EXTENSIONS = [
+
+    "src.ext.database:init_app",
+    "src.ext.auth:init_app",
+    "src.ext.admin:init_app",
+    "src.ext.commands:init_app",
+    "src.ext.session:init_app",
+    "src.ext.socket:init_app",
+    "src.blueprints.webui:init_app",
+]
+
+
