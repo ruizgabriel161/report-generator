@@ -1,7 +1,4 @@
-/__pycache__/
-./mypy_cache
-/.vscode/
-/venv/
-
-# Ignore dynaconf secret files
-.secrets.*
+venv/
+__pycache__/
+flask_session/
+.secrets.toml
