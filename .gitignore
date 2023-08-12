@@ -1,5 +1,7 @@
-
+/__pycache__/
+./mypy_cache
+/.vscode/
 /venv/
 
 # Ignore dynaconf secret files
-
+.secrets.*
