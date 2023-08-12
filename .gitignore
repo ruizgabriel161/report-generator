@@ -2,7 +2,7 @@
 ./mypy_cache
 /.vscode/
 /venv/
-/app/ext/config.py
+
 # Ignore dynaconf secret files
 .secrets.*
-/flask_session/
+\flask_session\
