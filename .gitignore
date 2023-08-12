@@ -5,4 +5,4 @@
 
 # Ignore dynaconf secret files
 .secrets.*
-\flask_session\
+/flask_session/
