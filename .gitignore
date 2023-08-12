@@ -5,3 +5,4 @@
 /app/ext/config.py
 # Ignore dynaconf secret files
 .secrets.*
+/flask_session/
