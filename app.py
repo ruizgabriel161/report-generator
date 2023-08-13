@@ -3,16 +3,15 @@ from flask import Flask
 from src.ext import configuration
 
 
-
-def minimal_app():
+def minimal_app(**config):
     app = Flask(__name__)
-    configuration.init_app(app)
+    configuration.init_app(app, **config)
     return app
 
 
-def create_app():
+def create_app(environ, start_response, **config):
 
-    app = minimal_app()
+    app = minimal_app(**config)
 
     configuration.load_extensions(app)
-    return app
+    return app(environ=environ, start_response=start_response)
