@@ -17,10 +17,7 @@ admin = Admin()
 
 def is_admin_user():
     username = get_username()
-
-
     user = User.query.filter_by(username=username).first()
-
     return user is not None and user.signature == "admin"
 
 
@@ -41,4 +38,4 @@ def init_app(app):
     admin.name = app.config.TITLE
     admin.template_mode = "bootstrap3"
     admin.init_app(app)
-    admin.add_view(UserAdmin(model=User, session=db.session, name="webui_user_admin"))
+    admin.add_view(UserAdmin(model=User, session=db.session, endpoint="admin_user_view"))
