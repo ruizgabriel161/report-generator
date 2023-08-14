@@ -10,7 +10,7 @@ EXTENSIONS = [
 
     "src.ext.database:init_app",
     "src.ext.auth:init_app",
-    "src.ext.admin:init_app",
+    "src.ext.admin_view:init_app",
     "src.ext.commands:init_app",
     "src.ext.session:init_app",
     "src.ext.socket:init_app",

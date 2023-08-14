@@ -18,7 +18,6 @@ admin = Admin()
 def is_admin_user():
     username = get_username()
 
-    print("testando")
 
     user = User.query.filter_by(username=username).first()
 
