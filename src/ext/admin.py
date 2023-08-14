@@ -1,4 +1,4 @@
-from flask import redirect, url_for
+from flask import 
 from flask_admin import Admin
 from flask_admin.base import AdminIndexView
 from flask_admin.contrib import sqla
@@ -42,4 +42,4 @@ def init_app(app):
     admin.name = app.config.TITLE
     admin.template_mode = "bootstrap3"
     admin.init_app(app)
-    admin.add_view(UserAdmin(model=User, session=db.session, name="user_admin2"))
+    admin.add_view(UserAdmin(model=User, session=db.session, name=app.config.USER_ADMIN))
