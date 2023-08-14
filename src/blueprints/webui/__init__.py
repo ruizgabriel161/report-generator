@@ -19,24 +19,24 @@ bp = Blueprint(
 )
 
 
-bp.add_url_rule("/login", view_func=index)
-bp.add_url_rule("/maps", view_func=index)
-bp.add_url_rule("/food", view_func=index)
-bp.add_url_rule("/init", view_func=page_first)
+bp.add_url_rule("/webui/login", view_func=index)
+bp.add_url_rule("/webui/maps", view_func=index)
+bp.add_url_rule("/webui/food", view_func=index)
+bp.add_url_rule("/webui/init", view_func=page_first)
 
 
-bp.add_url_rule("/logout", view_func=logout)
+bp.add_url_rule("/webui/logout", view_func=logout)
 
 bp.add_url_rule(
-    "/status/<socketid>/<_type>/<cep>/<uri>", view_func=status, methods=["POST"]
+    "/webui/status/<socketid>/<_type>/<cep>/<uri>", view_func=status, methods=["POST"]
 )
 bp.add_url_rule(
-    "/register_user/<socketid>/<user>/<password>",
+    "/webui/register_user/<socketid>/<user>/<password>",
     view_func=register_user,
     methods=["POST"],
 )
 
-bp.add_url_rule("/download/<uri>", view_func=download, methods=["GET"])
+bp.add_url_rule("/webui/download/<uri>", view_func=download, methods=["GET"])
 
 def page(app):
 
@@ -45,6 +45,6 @@ def page(app):
         return redirect("/login")
 
 def init_app(app, socketio):
-    app.register_blueprint(bp)
+    app.register_blueprint(bp, url_prefix="/webui")
     bp.socketio = socketio
     page(app=app)
