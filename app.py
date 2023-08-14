@@ -9,9 +9,9 @@ def minimal_app(**config):
     return app
 
 
-def create_app(**config):
+def create_app(environ, start_response, **config):
 
     app = minimal_app(**config)
 
     configuration.load_extensions(app)
-    return app
+    return app(environ=environ, start_response=start_response)
