@@ -1,4 +1,4 @@
-from flask import 
+
 from flask_admin import Admin
 from flask_admin.base import AdminIndexView
 from flask_admin.contrib import sqla
@@ -18,10 +18,9 @@ admin = Admin()
 def is_admin_user():
     username = get_username()
 
-    print(username)
+
     user = User.query.filter_by(username=username).first()
 
-    print(user.signature)
     return user is not None and user.signature == "admin"
 
 
