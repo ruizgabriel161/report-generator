@@ -2,6 +2,8 @@
 SQLALCHEMY_DATABASE_URI = "sqlite:///vision_scrapping.db"
 dotenv_file = ".secrets.toml"
 TITLE = "Vision Admin"
+USER_ADMIN = "Gabriel Ruiz"
+Passord_ADMIN = "G@briel210399"
 SECRET_KEY = "G@briel210399"
 SESSION_TYPE = "filesystem"
 EXTENSIONS = [
