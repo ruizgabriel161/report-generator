@@ -41,4 +41,4 @@ def init_app(app):
     admin.name = app.config.TITLE
     admin.template_mode = "bootstrap3"
     admin.init_app(app)
-    admin.add_view(UserAdmin(model=User, session=db.session, endpoint="webui_user_admin"))
+    admin.add_view(UserAdmin(model=User, session=db.session, name="webui_user_admin"))

@@ -45,6 +45,6 @@ def page(app):
         return redirect("/login")
 
 def init_app(app, socketio):
-    app.register_blueprint(bp, url_prefix="/webui")
+
     bp.socketio = socketio
     page(app=app)
