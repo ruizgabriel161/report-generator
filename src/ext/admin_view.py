@@ -38,4 +38,4 @@ def init_app(app):
     admin.name = app.config.TITLE
     admin.template_mode = "bootstrap3"
     admin.init_app(app)
-    admin.add_view(UserAdmin(model=User, session=db.session, endpoint="admin_user_view_unique"))
+    admin.add_view(UserAdmin(model=User, session=db.session))
