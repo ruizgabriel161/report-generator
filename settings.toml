@@ -10,7 +10,6 @@ EXTENSIONS = [
 
     "src.ext.database:init_app",
     "src.ext.auth:init_app",
-    "src.ext.admin_view:init_app",
     "src.ext.commands:init_app",
     "src.ext.session:init_app",
     "src.ext.socket:init_app",
@@ -20,3 +19,4 @@ EXTENSIONS = [
 
 [production]
 SQLALCHEMY_DATABASE_URI = "postgresql://vision_scrapping_user:kYv3KVDiQwiYZx98ZYRDLUna0gNTL7Lg@dpg-cjgg2kj37aks73ccmlp0-a.oregon-postgres.render.com/vision_scrapping"
+
