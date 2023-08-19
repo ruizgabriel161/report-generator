@@ -29,7 +29,9 @@ def index():
 
     uri = request.full_path.replace("?", "")
 
-    socket_url = request.host_url
+    socket_url = request.host_url[:-1]
+
+    print(socket_url)
 
     match uri:
         case "/maps":
