@@ -28,12 +28,8 @@ def index():
     socketio = current_app.extensions["socketio"]
 
     uri = request.full_path.replace("?", "")
-    print(session)
-    print(uri[1:])
 
     socket_url = request.host_url
-
-    print(socket_url)
 
     match uri:
         case "/maps":
@@ -52,7 +48,7 @@ def index():
                 socket_url=socket_url
             )
         case "/food":
-            print(verify_permission(user=session["username"], uri=uri[1:]))
+            
             if "username" not in session or not verify_permission(
                 user=session["username"], uri=uri
             ):

@@ -10,8 +10,6 @@ def verify_login(user):
     username = user.get("username")
     password = str(user.get("password")).strip()
 
-    print(f"A senha é: {password}")
-
     if not username or not password:
         return False
     existing_user = User.query.filter_by(username=username).first()
@@ -19,11 +17,8 @@ def verify_login(user):
     if not existing_user:
         return False
     if check_password_hash(existing_user.password, password):
-        print("Deu bom!")
-
         return True
     else:
-        print("Deu ruim!")
 
         return False
 
@@ -32,8 +27,6 @@ def verify_permission(user, uri):
     existing_user = User.query.filter_by(username=user).first()
     if existing_user.signature is None:
         return False
-
-    print(f"A URI É {uri} e o acesso é {existing_user.signature}")
 
     if existing_user and (
         existing_user.signature in uri
@@ -44,12 +37,11 @@ def verify_permission(user, uri):
             and ("maps" in uri)
         )
     ):
-        
-        print("teste verify")
+
         return True
 
     else:
-        print("teste falso")
+
         return False
 
 

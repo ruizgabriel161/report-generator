@@ -63,7 +63,7 @@ class DefinedAction(object):
         if result:
             try:
                 self.socketio.emit("status", "Arquivo Gerado.", to=self.socketid)
-                print("maps2")
+
 
                 self.socketio.emit(
                     "download_file",
