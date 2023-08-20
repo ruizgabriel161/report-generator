@@ -3,7 +3,7 @@ window.onload = function () {
     const socket = io()
     let socketid = undefined
 
-    socket.connect("http://0.0.0.0:10000")
+    socket.connect("https://geradorderelatorio.onrender.com:10000")
     socket.on('connect', () => {
         console.log('Conectado')
         socketid = socket.id
