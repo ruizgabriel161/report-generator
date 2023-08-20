@@ -3,6 +3,7 @@ window.onload = function () {
     const socket = io()
     let socketid = undefined
 
+    socket.connect("127.0.0.1:10000")
     socket.on('connect', () => {
         console.log('Conectado')
         socketid = socket.id
