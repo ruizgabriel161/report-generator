@@ -2,8 +2,10 @@ window.onload = function () {
 
     const socket = io()
     let socketid = undefined
-    let port = process.env.PORT || 3000;
+    let port = process.env.PORT || 8899;
     let url = "${SOCKET_URL}:${port}"
+
+    alert(url)
     socket.connect(url)
     socket.on('connect', () => {
         console.log('Conectado')
