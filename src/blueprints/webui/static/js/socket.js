@@ -3,6 +3,8 @@ window.onload = function () {
     const socket = io()
     let socketid = undefined
 
+    socket.connect("wss://sok.onrender.com")
+
     socket.on('connect', () => {
         console.log('Conectado')
         socketid = socket.id
