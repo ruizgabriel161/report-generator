@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    const socket = io("socket-lb02.onrender.com", {transports: ['websocket']})
+    const socket = io("wss://geradorderelatorio.onrender.com", {transports: ['websocket']})
     let socketid = undefined
 
     socket.on('connect', () => {
