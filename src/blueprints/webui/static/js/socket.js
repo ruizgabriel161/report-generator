@@ -3,7 +3,7 @@ window.onload = function () {
     const socket = io()
     let socketid = undefined
 
-    socket.connect("wss://socket-lb02.onrender.com")
+    socket.connect(":10000ws://myservice.onrender.com")
 
     socket.on('connect', () => {
         console.log('Conectado')
